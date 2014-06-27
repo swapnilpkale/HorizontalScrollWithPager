@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:background="#ECECEC">
+
+    <TextView
+        android:id="@+id/list_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:drawableLeft="@drawable/ic_launcher"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/app_name" />
+
+    <TextView
+        android:id="@+id/list_item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/count_circle"
+        android:padding="2dp"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="@android:color/white" />
+
+    <View
+        android:id="@+id/list_item_devider"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_alignLeft="@id/list_item_title"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/list_item_title"
+        android:background="@drawable/dashed_line" />
+    <TextView
+        android:id="@+id/list_item_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_item_devider"
+        android:padding="10dp"
+        android:layout_alignLeft="@id/list_item_title"
+        android:gravity="center_vertical"
+        android:text="@string/app_name" />
+
+</RelativeLayout>
