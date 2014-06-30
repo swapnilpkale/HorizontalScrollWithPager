@@ -14,8 +14,11 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.agreeya.kdmclienttestapp.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.agreeya.kdmclienttestapp.MainActivity" >
+        </activity>
+        <activity
+            android:name="com.agreeya.kdmclienttestapp.StartActivity"
+            android:theme="@style/ActionBarTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

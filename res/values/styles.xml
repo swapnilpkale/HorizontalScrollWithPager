@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -17,4 +17,16 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="ActionBarTheme" parent="AppBaseTheme">
+        <item name="android:actionBarStyle">@style/Theme.MyAppTheme.ActionBar</item>
+    </style>
+    
+    <style name="Theme.MyAppTheme.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <!-- <item name="android:icon">@android:color/transparent</item> -->
+        <item name="android:background">@android:color/background_light</item>
+        <item name="android:icon">@drawable/ic_action_profile_image</item>
+        <item name="android:title">@string/profile</item>
+        <!-- <item name="android:height">58dp</item>
+        <item name="android:titleTextStyle">@style/transparentTextColour</item> -->
+    </style>
 </resources>

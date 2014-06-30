@@ -1,5 +1,6 @@
 package com.agreeya.kdmclienttestapp;
 
+import android.app.ActionBar;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Display;
 import android.view.Menu;
+import android.view.View;
 
 public class MainActivity extends FragmentActivity {
 
@@ -28,6 +30,15 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		ActionBar actionBar = getActionBar(); 
+		actionBar.setDisplayShowCustomEnabled(true);
+		
+		View customView = getLayoutInflater().inflate(
+				R.layout.custom_action_bar, null);
+		actionBar.setDisplayShowHomeEnabled(false);
+		actionBar.setCustomView(customView);
+		actionBar.setHomeButtonEnabled(false);
+
 		Display display = getWindowManager().getDefaultDisplay();
 		Point size = new Point();
 		display.getSize(size);
@@ -44,13 +55,6 @@ public class MainActivity extends FragmentActivity {
 
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
 	class ScrollAdapter extends FragmentPagerAdapter {
 		public ScrollAdapter(FragmentManager fm) {
 			super(fm);
@@ -58,7 +62,8 @@ public class MainActivity extends FragmentActivity {
 
 		@Override
 		public Fragment getItem(int position) {
-			return TestFragment.newInstance(CONTENT[position % CONTENT.length],COLORS[position % CONTENT.length]);
+			return TestFragment.newInstance(CONTENT[position % CONTENT.length],
+					COLORS[position % CONTENT.length]);
 		}
 
 		@Override
