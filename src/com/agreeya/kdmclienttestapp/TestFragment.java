@@ -1,5 +1,6 @@
 package com.agreeya.kdmclienttestapp;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -14,7 +15,7 @@ import android.widget.TextView;
 public final class TestFragment extends Fragment {
     private static final String KEY_CONTENT = "TestFragment:Content";
 
-    public static TestFragment newInstance(String content) {
+    public static TestFragment newInstance(String content, int backgroundColor) {
         TestFragment fragment = new TestFragment();
 
         StringBuilder builder = new StringBuilder();
@@ -23,11 +24,13 @@ public final class TestFragment extends Fragment {
         }
         builder.deleteCharAt(builder.length() - 1);
         fragment.mContent = builder.toString();
+        fragment.mBackgroundColor = backgroundColor;
 
         return fragment;
     }
 
     private String mContent = "???";
+    private int mBackgroundColor = Color.WHITE;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,7 @@ public final class TestFragment extends Fragment {
         LinearLayout layout = new LinearLayout(getActivity());
         layout.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
         layout.setGravity(Gravity.CENTER);
+        layout.setBackgroundColor(mBackgroundColor);
         layout.addView(text);
 
         return layout;

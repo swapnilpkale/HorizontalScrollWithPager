@@ -234,6 +234,7 @@ public class CustomisedScroll extends HorizontalScrollView implements PageIndica
         tabView.setText(text);
         tabView.setFocusable(true);
         tabView.setGravity(Gravity.CENTER);
+        tabView.setBackgroundColor(MainActivity.COLORS[index]);
 
         LinearLayout.LayoutParams Params1 = new LinearLayout.LayoutParams(MainActivity.display_width/5,MainActivity.display_width/5);
         tabView.setLayoutParams(Params1);  
